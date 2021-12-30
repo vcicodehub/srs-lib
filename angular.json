@@ -3,5 +3,37 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-  }
+    "srs-user-lib": {
+      "projectType": "library",
+      "root": "projects/srs-user-lib",
+      "sourceRoot": "projects/srs-user-lib/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/srs-user-lib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/srs-user-lib/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/srs-user-lib/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/srs-user-lib/src/test.ts",
+            "tsConfig": "projects/srs-user-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/srs-user-lib/karma.conf.js"
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "srs-user-lib"
 }

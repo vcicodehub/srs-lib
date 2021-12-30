@@ -15,6 +15,12 @@
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "es2017",
+    "paths": {
+      "srs-user-lib": [
+        "dist/srs-user-lib/srs-user-lib",
+        "dist/srs-user-lib"
+      ]
+    },
     "module": "es2020",
     "lib": [
       "es2018",
