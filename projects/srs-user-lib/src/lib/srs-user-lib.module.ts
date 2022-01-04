@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { SrsUserLibComponent } from './srs-user-lib.component';
-import { SrsUserLibService } from './srs-user-lib.service';
 
 @NgModule({
   declarations: [
@@ -10,9 +9,6 @@ import { SrsUserLibService } from './srs-user-lib.service';
   ],
   exports: [
     SrsUserLibComponent
-  ],
-  providers: [
-    SrsUserLibService
   ]
 })
 export class SrsUserLibModule { }
