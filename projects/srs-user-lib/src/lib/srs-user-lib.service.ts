@@ -1,22 +1,21 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { SRSUser } from './SRSUser';
 
 @Injectable({
   providedIn: 'root'
 })
-export class SrsUserLibService {
+export class SRSUserService {
 
-  private subject = new BehaviorSubject<string>("");
+  private _userSubject = new BehaviorSubject<SRSUser>(new SRSUser());
 
-  constructor() {
-    console.log('SrsUserLibService created.');
+  constructor() { }
+
+  setUser(user: SRSUser) {
+      this._userSubject.next(user);
   }
 
-  setUserID(message: string) {
-      this.subject.next(message);
-  }
-
-  getUserID(): Observable<any> {
-      return this.subject.asObservable();
+  getUser(): Observable<any> {
+      return this._userSubject.asObservable();
   }
 }
