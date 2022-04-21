@@ -10,5 +10,6 @@ export class SRSUser {
     email?: string;
     phoneNumber?: string;
     shopId?: string;
+    shopNumber?: string;
     roles?: string[];
   }
